@@ -8,6 +8,7 @@ Bu proje, B2B yazılım ajansları için lead generation odaklı, SEO-first ve p
 - Sitemap ve robots.txt otomatik üretimi
 - Lead capture formu + doğrulama (reCAPTCHA alanı hazır)
 - CRM/CMS entegrasyonlarına hazır API uç noktası
+- Admin panel ile lead listesi
 - TailwindCSS ile modern ve erişilebilir UI
 - Mobile-first, responsive tasarım
 
@@ -30,7 +31,13 @@ npm run start
 ## Yapı
 - `app/`: Next.js App Router sayfaları, API endpointleri, sitemap/robots
 - `components/`: Modüler UI bileşenleri
-- `lib/`: SEO yardımcıları ve statik içerik verileri
+- `lib/`: SEO yardımcıları ve lead yardımcıları
+
+## Admin Panel ve CRM
+- Admin panel: `/admin`
+- API endpoint: `GET /api/leads` (opsiyonel `x-admin-token` ile korunur)
+- CRM webhook entegrasyonu için `CRM_WEBHOOK_URL` ortam değişkeni kullanılabilir.
+- Admin API koruması için `ADMIN_TOKEN` ortam değişkeni tanımlayın.
 
 ## Notlar
 - `app/api/lead` endpointi CRM webhook entegrasyonuna hazırdır.
